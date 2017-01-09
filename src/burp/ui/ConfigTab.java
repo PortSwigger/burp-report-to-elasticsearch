@@ -5,8 +5,6 @@ import burp.eventStream.Config;
 import burp.eventStream.EventStream;
 import burp.eventStream.FormUtility;
 
-import com.sun.deploy.panel.NumberDocument;
-
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -71,7 +69,7 @@ public class ConfigTab implements ITab
             }
         });
 
-        addRowText(Config.ELASTICSEARCH_PORT_KEY, new Integer(config.elasticSearchPort()).toString(), new NumberDocument(), new TextFieldActionListener()
+        addRowText(Config.ELASTICSEARCH_PORT_KEY, new Integer(config.elasticSearchPort()).toString(), new PlainDocument(), new TextFieldActionListener()
         {
             @Override
             public void action(JTextField textField)
