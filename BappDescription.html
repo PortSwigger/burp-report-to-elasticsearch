@@ -1,0 +1,23 @@
+<p>This extension passes along issues discovered by Burp to either stdout or an ElasticSearch database.</p>
+
+<p>When running Burp via the UI, the extension configuration is always sourced from the Java Preferences store.
+Conversely, when running headless the configuration is always sourced from environment variables.</p>
+
+<p>The environment variables are as follows:</p>
+
+<table>
+    <tr><td>"Type"</td><td>BURP_EVENTSTREAM_TYPE</td></tr>
+    <tr><td>"Elasticsearch Host"</td><td>BURP_EVENTSTREAM_ELASTICSEARCH_HOST</td></tr>
+    <tr><td>"Elasticsearch Port"</td><td>BURP_EVENTSTREAM_ELASTICSEARCH_PORT</td></tr>
+    <tr><td>"Elasticsearch Prefix"</td><td>BURP_EVENTSTREAM_ELASTICSEARCH_PREFIX</td></tr>
+</table>
+
+<p>Scan IDs are generated in the extension, and the end of a scan is detected via a cooldown period calculated from current user settings.
+Concurrent scan IDs are therefore not supported and the extension will consider concurrent scans to be part of a single, overall scan.
+In the future, if Burp attaches its own IDs to scans and announces the start/end of scans, this could be more accurate (and timely!).</p>
+
+<p>Currently, authenticated access to ElasticSearch is not supported.</p>
+
+<p>It's possible to switch output type while a scan is in progress. No special handling occurs;
+events after this point will be streamed to the latter output, i.e. it will be missing the start of the current scan.</p>
+
