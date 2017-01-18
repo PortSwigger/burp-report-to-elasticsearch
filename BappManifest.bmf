@@ -8,4 +8,4 @@ ProOnly: True
 Author: Adam Piper, PortSwigger Web Security
 ShortDescription: Reports issues discovered by Burp to an ElasticSearch database.
 EntryPoint: build/libs/report-to-elastic-search-all.jar
-BuildCommand: gradle -PburpJar=$BURP_JAR fatJar
+BuildCommand: gradle fatJar
