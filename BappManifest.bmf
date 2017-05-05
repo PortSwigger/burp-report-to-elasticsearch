@@ -2,7 +2,7 @@ Uuid: 8493f7ae00aa4e01b6ffbbd1b8381ccc
 ExtensionType: 1
 Name: Report To Elastic Search
 RepoName: report-to-elastic-search
-ScreenVersion: 0.0.2
+ScreenVersion: 0.0.4
 SerialVersion: 1
 MinPlatformVersion: 0
 ProOnly: True
